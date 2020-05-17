@@ -6,10 +6,15 @@ MainHUD::MainHUD() :
 _scoreValue(0),
 _scoreText()
 {
+    try{
 	if (!_font.loadFromFile("fonts/PCapTerminalBold.otf"))
 	{
-		std::cout << "Error loading font";
+		throw My_Exception("Error loading font");
 	}
+    }
+    catch(My_Exception& e){
+        std::cout << e.what() << '\n';
+    }
 
 }
 
