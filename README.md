@@ -32,10 +32,10 @@ virtual void Update(float elapsedTime) = 0; // Pure Virtual Class
 
 ##### Operatori 
 ```
-		void operator()(const std::pair<std::string, VisibleGameObject*> & p) const
-		{
-			delete p.second;
-		}
+void operator()(const std::pair<std::string, VisibleGameObject*> & p) const
+{
+	delete p.second;
+}
 ```
 
 ##### Heap Memory Allocation
@@ -62,12 +62,12 @@ std::map<std::string, sf::Texture> VisibleGameObject::_images; //basic image cac
 
 ##### Lambda expressions
 ```
-		auto posX = [](auto first, auto second, auto third) {
-            return first + second/2 - third/2;
-		};
-		auto posY = [](auto first, auto second) {
-            return first + second/2;
-		};
+auto posX = [](auto first, auto second, auto third) {
+	return first + second/2 - third/2;
+};
+auto posY = [](auto first, auto second) {
+	return first + second/2;
+};
 ```
 
 ##### Templates 
@@ -89,11 +89,11 @@ std::unique_ptr <Menu> menu(new Menu());
 ##### Design Patterns (2 patternuri)
 1. [Iterator](https://refactoring.guru/design-patterns/iterator) 
 ```
-	auto iterator = _gameObjects.begin();
-	while (iterator != _gameObjects.end())
-	{
-      /* some code */
-	}
+auto iterator = _gameObjects.begin();
+while (iterator != _gameObjects.end())
+{
+/* some code */
+}
 ```
 2. [State](https://refactoring.guru/design-patterns/state) 
 ```
