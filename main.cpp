@@ -6,7 +6,8 @@
 int main()
 {
 
-sf::RenderWindow window(sf::VideoMode(600*one, 600*one), "Bullet Hell Menu");
+
+sf::RenderWindow window(sf::VideoMode(600, 600), "Bullet Hell Menu");
 
 	//Menu *menu = Menu::getInstance();
     std::unique_ptr <Menu> menu(new Menu());

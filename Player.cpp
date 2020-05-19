@@ -4,9 +4,9 @@
 
 Player::Player() :
 _velocity(600.f),
-_noKeyWasPressed(one),
-_playerHit(zero),
-_currentLives(one+one+one)
+_noKeyWasPressed(true),
+_playerHit(false),
+_currentLives(3)
 {
 	Load("player.png");
 	assert(IsLoaded());
@@ -26,57 +26,62 @@ void Player::Update(float elapsedTime)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		movement.y -= _velocity;
-		_noKeyWasPressed = zero;
+		_noKeyWasPressed = false;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		movement.y += _velocity;
-		_noKeyWasPressed = zero;
+		_noKeyWasPressed = false;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		movement.x -= _velocity;
-		_noKeyWasPressed = zero;
+		_noKeyWasPressed = false;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		movement.x += _velocity;
-		_noKeyWasPressed = zero;
+		_noKeyWasPressed = false;
 	}
 
-	if (GetSprite().getPosition().x <= zero
-		&& movement.x < zero)
+	//collisions
+	//handle left border
+	if (GetSprite().getPosition().x <= 0
+		&& movement.x < 0)
 	{
-		movement.x = zero * one;
+		movement.x = 0;
 	}
 
+	//handle right border
 	if (GetSprite().getPosition().x >= Game::SCREEN_WIDTH - GetSprite().getGlobalBounds().width
-		&& movement.x > zero)
+		&& movement.x > 0)
 	{
-		movement.x = zero * one;
+		movement.x = 0;
 	}
 
-	if (GetSprite().getPosition().y <= zero
-		&& movement.y < zero)
+	//handle top border
+	if (GetSprite().getPosition().y <= 0
+		&& movement.y < 0)
 	{
-		movement.y = zero * one;
+		movement.y = 0;
 	}
 
+	//handle bottom border
 	if (GetSprite().getPosition().y >= Game::SCREEN_HEIGHT - GetSprite().getGlobalBounds().height
-		&& movement.y > zero * one)
+		&& movement.y > 0)
 	{
-		movement.y = zero;
+		movement.y = 0;
 	}
 
 
 	GetSprite().move(movement * elapsedTime);
 
-	_noKeyWasPressed = one;
+	_noKeyWasPressed = true;
 }
 
 void Player::HitPlayer()
 {
-	_playerHit = zero;
+	_playerHit = true;
 }
 
 bool Player::IsPlayerHit()
@@ -86,7 +91,7 @@ bool Player::IsPlayerHit()
 
 void Player::ResetPlayerState()
 {
-	_playerHit = zero;
+	_playerHit = false;
 }
 
 int Player::GetCurrentLives()
@@ -98,7 +103,7 @@ void Player::ResetStartingPosition()
 {
 	sf::Vector2f returnVector;
 
-	returnVector.x = Game::SCREEN_WIDTH / (one+one) - GetSprite().getGlobalBounds().width / (one+one);
+	returnVector.x = Game::SCREEN_WIDTH / 2 - GetSprite().getGlobalBounds().width / 2;
 	returnVector.y = Game::SCREEN_HEIGHT - 200.f;
 
 	SetPosition(returnVector.x, returnVector.y);
@@ -106,5 +111,5 @@ void Player::ResetStartingPosition()
 
 bool Player::ShouldPersist() const
 {
-	return one;
+	return true;
 }

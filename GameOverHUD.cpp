@@ -6,7 +6,7 @@
 
 GameOverHUD::GameOverHUD()
 {
-	ToggleVisiblity(zero);
+	ToggleVisiblity(false);
     try{
 	if (!_font.loadFromFile("fonts/PCapTerminalBold.otf"))
 	{
@@ -20,9 +20,9 @@ GameOverHUD::GameOverHUD()
 
 	_gameOverText.setString("GAME OVER");
 	_gameOverText.setFont(_font);
-	_gameOverText.setCharacterSize(one*100);
+	_gameOverText.setCharacterSize(100);
 	_gameOverText.setColor(sf::Color::Red);
-	_gameOverText.setPosition(Game::SCREEN_WIDTH / (one+one) - _gameOverText.getGlobalBounds().width / (one+one), Game::SCREEN_HEIGHT / (one + one));
+	_gameOverText.setPosition(Game::SCREEN_WIDTH / 2 - _gameOverText.getGlobalBounds().width / 2, Game::SCREEN_HEIGHT / 2);
 }
 
 GameOverHUD::~GameOverHUD(){}
@@ -42,5 +42,5 @@ void GameOverHUD::Update(float elapsedTime)
 
 bool GameOverHUD::ShouldPersist() const
 {
-	return one;
+	return true;
 }

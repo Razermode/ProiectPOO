@@ -18,6 +18,7 @@ public:
 
 	virtual sf::Rect<float> GetBoundingRect() const;
 	virtual bool IsLoaded() const;
+
 	virtual bool ShouldPersist() const;
 	virtual void ToggleVisiblity(bool isVisible);
 	virtual bool ShouldDraw() const;

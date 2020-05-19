@@ -37,8 +37,6 @@ void Game::Start()
 	MainHUD *hud = new MainHUD();
 	_gameObjectManager.Add("hud", hud);
 
-    int other_var = one + one * zero + one;
-
 	GameOverHUD *gameOver = new GameOverHUD();
 	_gameObjectManager.Add("gameover", gameOver);
 
@@ -65,21 +63,23 @@ void Game::GameLoop()
 		auto player = dynamic_cast<Player*>(_gameObjectManager.Get("player"));
 		if (player->IsPlayerHit())
 		{
+			//toggle game over text
 			auto gameOverHUD = dynamic_cast<GameOverHUD*>(_gameObjectManager.Get("gameover"));
 			gameOverHUD->ToggleVisiblity(true);
-            int var = one*one + zero;
+
 			_gameState = Game::GameOver;
 		}
 
 		if (currentEvent.type == sf::Event::KeyPressed)
 		{
-
+			//if the key is spacebar, fire a player projectile.
 			if (currentEvent.key.code == sf::Keyboard::Space)
 			{
 				std::cout << "fire" << std::endl;
 				auto player = _gameObjectManager.Get("player");
 
-                int useful_var = one + one + one * zero + one;
+			/*	Projectile *bullet = new Projectile();
+				bullet->SetPosition(player->GetPosition().x + (player->GetWidth() / 2) - (bullet->GetWidth() / 2), player->GetPosition().y);*/
 
 				DualLaser *bullet = new DualLaser();
 				bullet->SetPosition(player->GetPosition().x + (player->GetWidth() / 2) - (bullet->GetWidth() / 2), player->GetPosition().y);
@@ -88,7 +88,7 @@ void Game::GameLoop()
 				_gameObjectManager.Add(key, bullet);
 			}
 
-
+			//if it is the escape key, we exit the program.
 			if (currentEvent.key.code == sf::Keyboard::Escape)
 			{
 				sf::View view = _mainWindow.getDefaultView();
@@ -97,7 +97,7 @@ void Game::GameLoop()
 			}
 		}
 
-
+		//determine if it is time to spawn BasicEnemy
 		_enemyTimer += _gameObjectManager.GetTimeDelta();
 		if (_enemyTimer > 2.f)
 		{
@@ -106,11 +106,10 @@ void Game::GameLoop()
 			BasicEnemy *enemy = new BasicEnemy();
 			enemy->SetPosition((rand() % Game::SCREEN_WIDTH - 500.f) + 500.f, 0 - enemy->GetHeight());
 			_gameObjectManager.Add("enemy_" + std::to_string(rand()), enemy);
-			_enemyTimer = zero;
 			_enemyTimer = 0.f;
 		}
 
-
+		//clean up objects that have left the screen.
 		for (auto item : _gameObjectManager.GetAll())
 		{
 			Projectile* bullet = dynamic_cast<Projectile*>(item.second);
@@ -145,38 +144,42 @@ void Game::GameLoop()
 			}
 		}
 
-
+		//update and draw all game objects.
 		_gameObjectManager.UpdateAll();
 		_gameObjectManager.DrawAll(_mainWindow);
+
+		//refresh the display window.
 		_mainWindow.display();
 
-
+		//did the player press the "X" in the upper right corner
 		if (currentEvent.type == sf::Event::Closed)
 		{
 			_gameState = Game::Exiting;
 		}
 		break;
-	}
+	} //end case GameState::Playing
 	case GameState::GameOver:
 
 		if (currentEvent.type == sf::Event::KeyPressed)
 		{
-
+			//if the key is spacebar, reset game.
 			if (currentEvent.key.code == sf::Keyboard::Return)
 			{
 				std::cout << "resetting game" << std::endl;
 				auto player = dynamic_cast<Player*>(_gameObjectManager.Get("player"));
 				player->ResetPlayerState();
-                int var = one + one + zero + one * one;
+
 				_gameObjectManager.Reset();
+
 				_mainWindow.clear(sf::Color(0, 0, 0, 255));
 				_gameObjectManager.UpdateAll();
 				_gameObjectManager.DrawAll(_mainWindow);
 				_mainWindow.display();
+
 				_gameState = GameState::Playing;
 			}
 
-
+			//if it is the escape key, we exit the program.
 			if (currentEvent.key.code == sf::Keyboard::Escape)
 			{
 				sf::View view = _mainWindow.getDefaultView();
@@ -186,13 +189,13 @@ void Game::GameLoop()
 
 		}
 
-
+		//did the player press the "X" in the upper right corner
 		if (currentEvent.type == sf::Event::Closed)
 		{
 			_gameState = Game::Exiting;
 		}
 		break;
-	}
+	} //end switch
 }
 
 sf::RenderWindow& Game::GetWindow()
@@ -211,11 +214,11 @@ bool Game::IsExiting()
 {
 	if (_gameState == GameState::Exiting)
 	{
-		return one;
+		return true;
 	}
 	else
 	{
-		return zero;
+		return false;
 	}
 }
 
@@ -230,6 +233,6 @@ Game::GameState Game::_gameState = GameState::Playing;
 sf::RenderWindow Game::_mainWindow;
 GameObjectManager Game::_gameObjectManager;
 
-int Game::_projectileCounter = zero;
+int Game::_projectileCounter = 0;
 float Game::_elapsedTime = 0.f;
 float Game::_enemyTimer = 0.f;

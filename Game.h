@@ -8,13 +8,14 @@ public:
 	constexpr static int SCREEN_WIDTH = 1024;
 	constexpr static int SCREEN_HEIGHT = 768;
 
-	constexpr static int MAX_PROJECTILES = one + one + one;
+	constexpr static int MAX_PROJECTILES = 3;
 
 	static void Start();
 	static sf::RenderWindow& GetWindow();
 	const static sf::Event& GetInput();
 
 	static GameObjectManager& GetGameObjectManager();
+
 
 private:
 	static bool IsExiting();
