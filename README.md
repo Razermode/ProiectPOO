@@ -3,7 +3,7 @@
 Put all the SFML files + DLL's + codeblocks project (linked) so it can be downloaded and compiled for testing. School project for OOP. All fonts taken from the internet.
 
 
-The project tasks: 
+## The project tasks: 
 
 ##### Interfața grafica (în SDL, SFML, Qt, etc) cu API pentru C++
 ```
@@ -121,10 +121,9 @@ static MainHUD* getInstance(){
 
 ##### Features of C++17/20
 ```
-	constexpr static int SCREEN_WIDTH = 1024;
-	constexpr static int SCREEN_HEIGHT = 768;
-
-	constexpr static int MAX_PROJECTILES = 3;
+constexpr static int SCREEN_WIDTH = 1024;
+constexpr static int SCREEN_HEIGHT = 768;
+constexpr static int MAX_PROJECTILES = 3;
 ```
 	
   
