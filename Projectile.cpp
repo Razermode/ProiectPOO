@@ -38,7 +38,7 @@ void Projectile::Update(float elapsedTime)
 			if (enemy->GetBoundingRect().contains(GetSprite().getPosition()))
 			{
 				Game::GetGameObjectManager().Remove(item.first);
-				shouldDestroy = true;
+				shouldDestroy = one;
 
 				//increment score
 				auto hud = dynamic_cast<MainHUD*>(Game::GetGameObjectManager().Get("hud"));

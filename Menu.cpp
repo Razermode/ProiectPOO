@@ -3,29 +3,29 @@
 
 Menu::Menu()
 {
-    float width = 600;
-    float height = 600;
+    float width = 600 * one + zero;
+    float height = 600 * one + zero;
 	if (!font.loadFromFile("arial.ttf"))
 	{
 		// handle error
 	}
 
-	menu[0].setFont(font);
-	menu[0].setColor(sf::Color::Red);
-	menu[0].setString("Play");
-	menu[0].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
+	menu[zero].setFont(font);
+	menu[zero].setColor(sf::Color::Red);
+	menu[zero].setString("Play");
+	menu[zero].setPosition(sf::Vector2f(width / (one+one), height / (MAX_NUMBER_OF_ITEMS + one) * one));
 
-	menu[1].setFont(font);
-	menu[1].setColor(sf::Color::White);
-	menu[1].setString("Options");
-	menu[1].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
+	menu[one].setFont(font);
+	menu[one].setColor(sf::Color::White);
+	menu[one].setString("Options");
+	menu[one].setPosition(sf::Vector2f(width / (one+one), height / (MAX_NUMBER_OF_ITEMS + one) * (one + one)));
 
-	menu[2].setFont(font);
-	menu[2].setColor(sf::Color::White);
-	menu[2].setString("Exit");
-	menu[2].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
+	menu[one+one].setFont(font);
+	menu[one+one].setColor(sf::Color::White);
+	menu[one+one].setString("Exit");
+	menu[one+one].setPosition(sf::Vector2f(width / (one + one), height / (MAX_NUMBER_OF_ITEMS + (one)) * (one+one+one+zero)));
 
-	selectedItemIndex = 0;
+	selectedItemIndex = zero;
 }
 
 
@@ -35,7 +35,7 @@ Menu::~Menu()
 
 void Menu::draw(sf::RenderWindow &window)
 {
-	for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
+	for (int i = zero; i < MAX_NUMBER_OF_ITEMS; i++)
 	{
 		window.draw(menu[i]);
 	}
@@ -43,7 +43,7 @@ void Menu::draw(sf::RenderWindow &window)
 
 void Menu::MoveUp()
 {
-	if (selectedItemIndex - 1 >= 0)
+	if (selectedItemIndex - one >= zero)
 	{
 		menu[selectedItemIndex].setColor(sf::Color::White);
 		selectedItemIndex--;
@@ -53,7 +53,7 @@ void Menu::MoveUp()
 
 void Menu::MoveDown()
 {
-	if (selectedItemIndex + 1 < MAX_NUMBER_OF_ITEMS)
+	if (selectedItemIndex + one < MAX_NUMBER_OF_ITEMS)
 	{
 		menu[selectedItemIndex].setColor(sf::Color::White);
 		selectedItemIndex++;

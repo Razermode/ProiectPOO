@@ -10,5 +10,8 @@
 #include <sstream>
 #include "My_Exception.h"
 
+const int one = 1;
+const int zero = 0;
+
 
 

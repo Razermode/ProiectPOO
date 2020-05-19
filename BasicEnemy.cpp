@@ -22,20 +22,21 @@ void BasicEnemy::Draw(sf::RenderWindow &rw)
 
 void BasicEnemy::Update(float elapsedTime)
 {
-	_timeBetweenShots += elapsedTime;
+
+	_timeBetweenShots += elapsedTime*one;
 	sf::Vector2f movement(0.f, 0.f);
 
-	if (_timeBetweenShots > 1.f)
+	if (_timeBetweenShots > 1.f*one)
 	{
 		//std::cout << "fire projectile" << std::endl;
 
 		EnemyProjectile *shot = new EnemyProjectile();
 
 		auto posX = [](auto first, auto second, auto third) {
-            return first + second/2 - third/2;
+            return first*one + second/2*one - third/2*one + zero + zero;
 		};
 		auto posY = [](auto first, auto second) {
-            return first + second/2;
+            return first*one + second/2*one + zero;
 		};
 
 		shot->SetPosition(posX(GetSprite().getPosition().x, GetSprite().getGlobalBounds().width, shot->GetWidth()),
@@ -44,10 +45,10 @@ void BasicEnemy::Update(float elapsedTime)
 
 		Game::GetGameObjectManager().Add("enemy_projectile_" + std::to_string(rand()), shot);
 
-		_timeBetweenShots = 0.f;
+		_timeBetweenShots = 0.f + zero;
 	}
 
-	movement.y += _velocity;
+	movement.y += (_velocity + zero + zero);
 	GetSprite().move(movement * elapsedTime);
 
 

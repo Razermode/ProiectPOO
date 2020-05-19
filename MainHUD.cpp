@@ -3,7 +3,7 @@
 #include "Game.h"
 
 MainHUD::MainHUD() :
-_scoreValue(0),
+_scoreValue(zero*one),
 _scoreText()
 {
     try{
@@ -30,23 +30,23 @@ void MainHUD::Update(float elapsedTime)
 {
 	_scoreText.setString("SCORE: " + std::to_string(_scoreValue));
 	_scoreText.setFont(_font);
-	_scoreText.setCharacterSize(50);
+	_scoreText.setCharacterSize(one*50);
 	_scoreText.setColor(sf::Color::White);
 	_scoreText.setPosition(10.f,10.f);
 }
 
 void MainHUD::IncrementScore()
 {
-	_scoreValue += 100;
+	_scoreValue += (one+one+one+one+one)*20;
 }
 
 void MainHUD::ResetScore()
 {
-	_scoreValue = 0;
+	_scoreValue = zero;
 }
 
 
 bool MainHUD::ShouldPersist() const
 {
-	return true;
+	return one;
 }

@@ -631,7 +631,7 @@
 	"VisibleGameObject.h"
 	"Game.h"
 
-1589749225 source:d:\ionut\documents\github\proiectpoo\basicenemy.cpp
+1589877199 source:d:\ionut\documents\github\proiectpoo\basicenemy.cpp
 	"stdafx.h"
 	"BasicEnemy.h"
 	"Game.h"
@@ -639,7 +639,7 @@
 	"Player.h"
 	<thread>
 
-1589752144 d:\ionut\documents\github\proiectpoo\stdafx.h
+1589877122 d:\ionut\documents\github\proiectpoo\stdafx.h
 	<stdio.h>
 	<SFML/System.hpp>
 	<SFML/Graphics.hpp>
@@ -1165,7 +1165,7 @@
 1589697070 d:\ionut\documents\github\proiectpoo\player.h
 	"VisibleGameObject.h"
 
-1589751706 source:d:\ionut\documents\github\proiectpoo\duallaser.cpp
+1589877965 source:d:\ionut\documents\github\proiectpoo\duallaser.cpp
 	"stdafx.h"
 	"DualLaser.h"
 	"BasicEnemy.h"
@@ -1187,7 +1187,7 @@
 	"Player.h"
 	"Game.h"
 
-1589746036 source:d:\ionut\documents\github\proiectpoo\game.cpp
+1589878048 source:d:\ionut\documents\github\proiectpoo\game.cpp
 	"stdafx.h"
 	"Game.h"
 	"Background.h"
@@ -1206,7 +1206,7 @@
 1589697287 d:\ionut\documents\github\proiectpoo\gameoverhud.h
 	"VisibleGameObject.h"
 
-1589744993 source:d:\ionut\documents\github\proiectpoo\gameobjectmanager.cpp
+1589877627 source:d:\ionut\documents\github\proiectpoo\gameobjectmanager.cpp
 	"stdafx.h"
 	"GameObjectManager.h"
 	"Game.h"
@@ -1215,27 +1215,27 @@
 	"MainHUD.h"
 	<thread>
 
-1589749964 source:d:\ionut\documents\github\proiectpoo\gameoverhud.cpp
+1589878084 source:d:\ionut\documents\github\proiectpoo\gameoverhud.cpp
 	"stdafx.h"
 	"GameOverHUD.h"
 	"Game.h"
 	"VisibleGameObject.h"
 	"My_Exception.h"
 
-1589751207 source:d:\ionut\documents\github\proiectpoo\main.cpp
+1589878106 source:d:\ionut\documents\github\proiectpoo\main.cpp
 	"stdafx.h"
 	"Game.h"
 	"Menu.cpp"
 	<thread>
 
-1589750168 d:\ionut\documents\github\proiectpoo\menu.cpp
+1589878237 d:\ionut\documents\github\proiectpoo\menu.cpp
 	"Menu.h"
 	"stdafx.h"
 
 1589750168 d:\ionut\documents\github\proiectpoo\menu.h
 	"SFML/Graphics.hpp"
 
-1589750689 source:d:\ionut\documents\github\proiectpoo\mainhud.cpp
+1589878121 source:d:\ionut\documents\github\proiectpoo\mainhud.cpp
 	"stdafx.h"
 	"MainHUD.h"
 	"Game.h"
@@ -1243,12 +1243,12 @@
 1589749518 source:d:\ionut\documents\github\proiectpoo\my_exception.cpp
 	"My_Exception.h"
 
-1589748844 source:d:\ionut\documents\github\proiectpoo\player.cpp
+1589878260 source:d:\ionut\documents\github\proiectpoo\player.cpp
 	"stdafx.h"
 	"Player.h"
 	"Game.h"
 
-1589697819 source:d:\ionut\documents\github\proiectpoo\projectile.cpp
+1589878276 source:d:\ionut\documents\github\proiectpoo\projectile.cpp
 	"stdafx.h"
 	"Projectile.h"
 	"BasicEnemy.h"
@@ -1259,4 +1259,7 @@
 	"stdafx.h"
 	"VisibleGameObject.h"
 	"Game.h"
+
+1589877134 source:d:\ionut\documents\github\proiectpoo\stdafx.cpp
+	"stdafx.h"
 

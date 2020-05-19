@@ -6,27 +6,7 @@
 int main()
 {
 
-/*
-	sf::RenderWindow window(sf::VideoMode(1024, 768), "SFML works!", sf::Style::Titlebar | sf::Style::Close);
-
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
-	while (window.isOpen())
-	{
-	sf::Event event;
-	while (window.pollEvent(event))
-	{
-	if (event.type == sf::Event::Closed)
-	window.close();
-	}
-
-	window.clear();
-	window.draw(shape);
-	window.display();
-	}
-*/
-sf::RenderWindow window(sf::VideoMode(600, 600), "Bullet Hell Menu");
+sf::RenderWindow window(sf::VideoMode(600*one, 600*one), "Bullet Hell Menu");
 
 	//Menu *menu = Menu::getInstance();
     std::unique_ptr <Menu> menu(new Menu());

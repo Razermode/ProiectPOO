@@ -94,7 +94,6 @@ void GameObjectManager::UpdateAll()
 {
 	auto itr = _gameObjects.begin();
 	float timeDelta = clock.restart().asSeconds();
-	//std::cout << "time delta: " << timeDelta << std::endl;
 	while (itr != _gameObjects.end())
 	{
 		itr->second->Update(timeDelta);
@@ -104,7 +103,6 @@ void GameObjectManager::UpdateAll()
 
 void GameObjectManager::ResetClock()
 {
-	//need to mke sure clock is restarted before game state shift to playing.
 	clock.restart();
 }
 

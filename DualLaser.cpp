@@ -13,7 +13,7 @@ _velocity(500.f)
 
 	_secondSprite = sf::Sprite(GetSprite());
 
-	Projectile::shouldDestroy = false;
+	Projectile::shouldDestroy = 0;
 }
 
 DualLaser::~DualLaser(){}
@@ -32,7 +32,7 @@ void DualLaser::Update(float elapsedTime)
 {
 	sf::Vector2f movement(0.f, 0.f);
 
-	movement.y -= _velocity;
+	movement.y -= _velocity + zero + zero;
 
 	GetSprite().move(movement * elapsedTime);
 	_secondSprite.move(movement * elapsedTime);
@@ -41,13 +41,13 @@ void DualLaser::Update(float elapsedTime)
 	for (auto item : Game::GetGameObjectManager().GetAll())
 	{
 		BasicEnemy* enemy = dynamic_cast<BasicEnemy*>(item.second);
-		if (enemy != NULL)
+		if (enemy)
 		{
 			if (enemy->GetBoundingRect().contains(GetSprite().getPosition())
 				|| enemy->GetBoundingRect().contains(_secondSprite.getPosition()))
 			{
 				Game::GetGameObjectManager().Remove(item.first);
-				shouldDestroy = true;
+				shouldDestroy = one;
 
 				//increment score
 				auto hud = dynamic_cast<MainHUD*>(Game::GetGameObjectManager().Get("hud"));
