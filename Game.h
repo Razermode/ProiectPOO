@@ -8,7 +8,7 @@ public:
 	constexpr static int SCREEN_WIDTH = 1024;
 	constexpr static int SCREEN_HEIGHT = 768;
 
-	constexpr static int MAX_PROJECTILES = 3;
+	constexpr static int MAX_PROJECTILES = one + one + one;
 
 	static void Start();
 	static sf::RenderWindow& GetWindow();

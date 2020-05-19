@@ -639,7 +639,7 @@
 	"Player.h"
 	<thread>
 
-1589877122 d:\ionut\documents\github\proiectpoo\stdafx.h
+1589878478 d:\ionut\documents\github\proiectpoo\stdafx.h
 	<stdio.h>
 	<SFML/System.hpp>
 	<SFML/Graphics.hpp>
@@ -1148,10 +1148,10 @@
 1589697057 d:\ionut\documents\github\proiectpoo\basicenemy.h
 	"VisibleGameObject.h"
 
-1589751096 d:\ionut\documents\github\proiectpoo\visiblegameobject.h
+1589878491 d:\ionut\documents\github\proiectpoo\visiblegameobject.h
 	"stdafx.h"
 
-1589746541 d:\ionut\documents\github\proiectpoo\game.h
+1589878510 d:\ionut\documents\github\proiectpoo\game.h
 	"stdafx.h"
 	"GameObjectManager.h"
 
@@ -1200,7 +1200,7 @@
 	"DualLaser.h"
 	<thread>
 
-1589745878 d:\ionut\documents\github\proiectpoo\background.h
+1589878429 d:\ionut\documents\github\proiectpoo\background.h
 	"VisibleGameObject.h"
 
 1589697287 d:\ionut\documents\github\proiectpoo\gameoverhud.h

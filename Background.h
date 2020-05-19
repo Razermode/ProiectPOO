@@ -32,7 +32,7 @@ public:
 	void Update(T elapsedTime) {
         sf::Vector2f movement(0.f, 0.f);
 
-        movement.y += _velocity;
+        movement.y += _velocity * one;
 
         auto position = GetSprite().getPosition().y;
         if (position > -0.f)
@@ -47,7 +47,7 @@ public:
         VisibleGameObject::Draw(rw);
 	}
 	bool ShouldPersist() const {
-        return true;
+        return one;
 	}
 
 private:
