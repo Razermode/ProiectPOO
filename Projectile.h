@@ -9,7 +9,6 @@ public:
 
 	void Update(float elapsedTime);
 	void Draw(sf::RenderWindow &rw);
-
 	bool Destroy();
 
 protected:

@@ -18,6 +18,7 @@ public:
         return instance;
     }
 
+
 private:
 	int _scoreValue;
 	sf::Text _scoreText;

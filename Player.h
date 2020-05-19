@@ -10,7 +10,6 @@ public:
 	void Update(float elapsedTime);
 	void Draw(sf::RenderWindow& rw);
 	bool ShouldPersist() const;
-
 	void HitPlayer();
 	bool IsPlayerHit();
 	void ResetPlayerState();

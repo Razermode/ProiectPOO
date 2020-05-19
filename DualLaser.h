@@ -10,7 +10,6 @@ public:
 	void Update(float elapsedTime);
 	void Draw(sf::RenderWindow &rw);
 	virtual bool Destroy();
-
 	void SetPosition(float x, float y);
 
 private:

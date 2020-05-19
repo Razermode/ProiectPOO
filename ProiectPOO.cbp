@@ -79,7 +79,6 @@
 		<Unit filename="VisibleGameObject.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="openal32.dll" />
-		<Unit filename="stdafx.cpp" />
 		<Unit filename="stdafx.h" />
 		<Extensions>
 			<code_completion />

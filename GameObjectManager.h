@@ -16,7 +16,6 @@ public:
 	void Reset();
 	void DrawAll(sf::RenderWindow& renderWindow);
 	void UpdateAll();
-
 	void ResetClock();
 	float GetTimeDelta();
 	std::map<std::string, VisibleGameObject*> GetAll();

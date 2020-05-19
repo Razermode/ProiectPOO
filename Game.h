@@ -16,7 +16,6 @@ public:
 
 	static GameObjectManager& GetGameObjectManager();
 
-
 private:
 	static bool IsExiting();
 	static void GameLoop();

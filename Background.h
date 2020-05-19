@@ -50,6 +50,7 @@ public:
         return one;
 	}
 
+
 private:
 	T _velocity;
 };

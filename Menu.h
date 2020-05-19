@@ -8,7 +8,6 @@ class Menu
 public:
     Menu();
 	~Menu();
-
 	void draw(sf::RenderWindow &window);
 	void MoveUp();
 	void MoveDown();

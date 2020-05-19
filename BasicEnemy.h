@@ -14,5 +14,4 @@ private:
 	float _velocity;
 	float _timeBetweenShots;
 	float _startingXCoord;
-
 };

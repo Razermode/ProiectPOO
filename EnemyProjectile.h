@@ -9,6 +9,7 @@ public:
 
 	void Update(float elapsedTime);
 	void Draw(sf::RenderWindow &rw);
+
 private:
 	float _velocity;
 };
